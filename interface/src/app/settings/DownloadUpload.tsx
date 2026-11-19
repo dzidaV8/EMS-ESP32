@@ -204,7 +204,7 @@ const DownloadUpload = () => {
       )}
 
       <Typography sx={{ pt: 2, pb: 2 }} variant="h6" color="primary">
-        {LL.UPLOAD()}
+        {LL.UPLOAD(0)}
       </Typography>
 
       <SingleUpload

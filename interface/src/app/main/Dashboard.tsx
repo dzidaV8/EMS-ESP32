@@ -377,7 +377,7 @@ const Dashboard = memo(() => {
         ) : (
           <Box sx={{ display: 'flex' }}>
             <Typography sx={{ mt: 1 }} color="warning" variant="body1">
-              no data
+              {LL.NO_DATA()}
             </Typography>
             <Tooltip title={LL.DASHBOARD_1()}>
               <HelpOutlineIcon

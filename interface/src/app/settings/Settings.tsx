@@ -44,7 +44,7 @@ const Settings = () => {
             <ListMenuItem
               icon={TuneIcon}
               bgcolor="#134ba2"
-              label={LL.APPLICATION()}
+              label={LL.APPLICATION(0)}
               text={LL.APPLICATION_SETTINGS_1()}
               to="application"
             />
@@ -53,7 +53,7 @@ const Settings = () => {
               icon={SettingsEthernetIcon}
               bgcolor="#40828f"
               label={LL.NETWORK(0)}
-              text={LL.CONFIGURE(LL.SETTINGS_OF(LL.NETWORK(1)))}
+              text={LL.CONFIGURE_NETWORK()}
               to="network"
             />
 

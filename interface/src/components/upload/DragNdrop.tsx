@@ -195,7 +195,7 @@ const DragNdrop = ({ text, extensions, onFileSelected }: DragNdropProps) => {
               color="primary"
               onClick={handleUploadClick}
             >
-              {LL.UPLOAD()}
+              {LL.UPLOAD(1)}
             </Button>
           </Box>
           {showUpgradeDialog && upgradeImportantMessageType > 0 && (
@@ -243,7 +243,7 @@ const DragNdrop = ({ text, extensions, onFileSelected }: DragNdropProps) => {
                   onClick={() => onFileSelected(file)}
                   color="primary"
                 >
-                  {LL.UPLOAD()}
+                  {LL.UPLOAD(1)}
                 </Button>
               </DialogActions>
             </Dialog>

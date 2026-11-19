@@ -92,7 +92,7 @@ const APStatus = () => {
           </ListItemAvatar>
           <ListItemText
             primary={LL.ADDRESS_OF('IP')}
-            secondary={data.ip_address || 'none'}
+            secondary={data.ip_address || '--'}
           />
         </ListItem>
 
@@ -106,7 +106,7 @@ const APStatus = () => {
           </ListItemAvatar>
           <ListItemText
             primary={LL.ADDRESS_OF('MAC')}
-            secondary={data.mac_address || 'none'}
+            secondary={data.mac_address || '--'}
           />
         </ListItem>
 

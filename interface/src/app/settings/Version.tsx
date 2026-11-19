@@ -168,9 +168,9 @@ const VersionInfoDialog = memo(
                 <TableCell sx={{ borderBottom: 'none', py: 0.5, fontSize: 13 }}>
                   {partition === currentPartition && LL.ACTIVE() + ' '}
                   {isStable
-                    ? LL.STABLE()
+                    ? LL.STABLE(1)
                     : isDev
-                      ? LL.DEVELOPMENT()
+                      ? LL.DEVELOPMENT(1)
                       : 'Partition ' + LL.VERSION()}
                 </TableCell>
               </TableRow>
@@ -227,7 +227,7 @@ const VersionInfoDialog = memo(
                       fontSize: 13
                     }}
                   >
-                    {isPartition ? 'Install Date' : 'Build Date'}
+                    {isPartition ? LL.INSTALL_DATE() : LL.BUILD_DATE()}
                   </TableCell>
                   <TableCell sx={{ borderBottom: 'none', py: 0.5, fontSize: 13 }}>
                     {prettyDateTime(locale, new Date(version.date))}
@@ -298,7 +298,7 @@ const InstallDialog = memo(
     return (
       <Dialog sx={dialogStyle} open={openInstallDialog} onClose={onClose}>
         <DialogTitle>
-          {`${LL.INSTALL()} ${fetchDevVersion ? LL.DEVELOPMENT() : LL.STABLE()} Firmware`}
+          {`${LL.INSTALL()} ${fetchDevVersion ? LL.DEVELOPMENT(1) : LL.STABLE(1)} Firmware`}
         </DialogTitle>
         <DialogContent dividers>
           <Typography sx={{ mb: 2 }}>
@@ -383,7 +383,7 @@ const InstallPartitionDialog = memo(
 
     return (
       <Dialog sx={dialogStyle} open={openInstallPartitionDialog} onClose={onClose}>
-        <DialogTitle>{isRecovery ? LL.RECOVERY_APP() : LL.INSTALL()}</DialogTitle>
+        <DialogTitle>{isRecovery ? LL.RECOVERY_APP(0) : LL.INSTALL()}</DialogTitle>
         <DialogContent dividers>
           <Typography sx={{ mb: 2 }}>
             {isRecovery
@@ -828,7 +828,7 @@ const Version = () => {
             {hasRecoverySlot && (
               <TableRow>
                 <TableCell sx={{ whiteSpace: 'nowrap' }}>
-                  <Typography color="secondary">{LL.RECOVERY_APP()}</Typography>
+                  <Typography color="secondary">{LL.RECOVERY_APP(0)}</Typography>
                 </TableCell>
                 <TableCell>
                   <Box
@@ -919,7 +919,7 @@ const Version = () => {
               onInstall={installPartitionFirmware}
             />
             <Typography sx={{ pt: 2, pb: 2 }} variant="h6" color="primary">
-              {LL.UPLOAD()}
+              {LL.UPLOAD(0)}
             </Typography>
             <SingleUpload
               text={LL.UPLOAD_FIRMWARE_TEXT()}

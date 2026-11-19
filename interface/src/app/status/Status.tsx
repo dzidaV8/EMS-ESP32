@@ -67,7 +67,7 @@ const SystemStatus = () => {
   const theme = useTheme();
 
   const busStatus = (() => {
-    if (!data) return 'EMS state unknown';
+    if (!data) return 'EMS ' + LL.STATE_UNKNOWN();
     switch (data.bus_status) {
       case busConnectionStatus.BUS_STATUS_CONNECTED:
         return `EMS ${LL.CONNECTED(0)} (${formatDurationSec(data.bus_uptime, LL)})`;
@@ -76,7 +76,7 @@ const SystemStatus = () => {
       case busConnectionStatus.BUS_STATUS_OFFLINE:
         return 'EMS ' + LL.DISCONNECTED();
       default:
-        return 'EMS state unknown';
+        return 'EMS ' + LL.STATE_UNKNOWN();
     }
   })();
 
@@ -206,7 +206,7 @@ const SystemStatus = () => {
             </Avatar>
           </ListItemAvatar>
           <ListItemText
-            primary={LL.STATUS_OF(LL.SYSTEM(0))}
+            primary={LL.STATUS_OF(LL.SYSTEM(1))}
             secondary={`${systemStatus} (${LL.UPTIME()}: ${formatDurationSec(data.uptime, LL)})`}
           />
         </ListItem>
@@ -230,7 +230,7 @@ const SystemStatus = () => {
           icon={MemoryIcon}
           bgcolor="#68374d"
           label={LL.HARDWARE()}
-          text={`${formatNumber(data.free_heap)} KB ${LL.FREE_MEMORY()}`}
+          text={`${formatNumber(data.free_heap)} KB ${LL.FREE_MEMORY(0)}`}
           to="/status/hardwarestatus"
         />
 
@@ -249,7 +249,7 @@ const SystemStatus = () => {
               : RouterIcon
           }
           bgcolor={networkStatusHighlight}
-          label={LL.NETWORK(1)}
+          label={LL.NETWORK(0)}
           text={networkStatus}
           to="/status/network"
         />
@@ -281,7 +281,7 @@ const SystemStatus = () => {
         <ListMenuItem
           icon={LogoDevIcon}
           bgcolor="#40828f"
-          label={LL.LOG_OF(LL.SYSTEM(0))}
+          label={LL.LOG_OF(LL.SYSTEM(2))}
           text={LL.VIEW_LOG()}
           to="/status/log"
         />

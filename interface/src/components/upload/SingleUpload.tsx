@@ -88,7 +88,7 @@ const SingleUpload = ({
     }
     await sendUpload(selected, custom).catch((error: Error) => {
       if (error.message.includes('The user aborted a request')) {
-        toast.warning(LL.UPLOAD() + ' ' + LL.ABORTED());
+        toast.warning(LL.UPLOAD(0) + ' ' + LL.ABORTED());
       } else if (error.message === 'Precondition Failed') {
         // 412, see OtaUpdater
         setCustomFile(selected);

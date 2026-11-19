@@ -225,7 +225,7 @@ const NTPSettings = () => {
               <ValidatedTextField
                 fieldErrors={fieldErrors || {}}
                 name="thermostat_sync"
-                label="Sync EMS-Thermostat"
+                label={LL.SYNC_EMS_TIME()}
                 variant="outlined"
                 sx={{ width: '30ch' }}
                 value={data.thermostat_sync}

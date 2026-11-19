@@ -159,7 +159,7 @@ const ApplicationSettings = () => {
     });
   };
 
-  useLayoutTitle(LL.APPLICATION());
+  useLayoutTitle(LL.APPLICATION(0));
 
   const validateAndSubmit = async () => {
     try {
@@ -214,8 +214,7 @@ const ApplicationSettings = () => {
     return (
       <>
         <Typography variant="h6" color="primary">
-          {LL.SYSTEM(0)}&nbsp;
-          {LL.CUSTOMIZATIONS()}
+          {LL.SYSTEM_CUSTOMIZATION()}
         </Typography>
         <TextField
           name="system_name"
@@ -228,7 +227,7 @@ const ApplicationSettings = () => {
         <Typography sx={{ pb: 1, pt: 2 }} variant="h6" color="primary">
           {LL.SERVICES()}
         </Typography>
-        <Typography color="secondary">Console</Typography>
+        <Typography color="secondary">{LL.CONSOLE()}</Typography>
         <BlockFormControlLabel
           control={
             <Checkbox
@@ -781,7 +780,7 @@ const ApplicationSettings = () => {
                   name="phy_type"
                   label={LL.PHY_TYPE()}
                   value={data.phy_type}
-                  fullWidth
+                  sx={{ width: '30ch' }}
                   variant="outlined"
                   onChange={updateFormValue}
                   margin="normal"
@@ -850,7 +849,7 @@ const ApplicationSettings = () => {
               variant="outlined"
               onChange={updateFormValue}
               margin="normal"
-              sx={{ width: '15ch' }}
+              sx={{ width: '20ch' }}
               select
             >
               {data.developer_mode && <MenuItem value={0}>{LL.OFF()}</MenuItem>}

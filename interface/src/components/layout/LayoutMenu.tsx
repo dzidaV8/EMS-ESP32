@@ -31,7 +31,7 @@ const LayoutMenuComponent = () => {
   return (
     <>
       <List component="nav">
-        <LayoutMenuItem icon={StarIcon} label="Dashboard" to={`/dashboard`} />
+        <LayoutMenuItem icon={StarIcon} label={LL.DASHBOARD()} to={`/dashboard`} />
         <LayoutMenuItem icon={CategoryIcon} label={LL.DEVICES()} to={`/devices`} />
         <Divider />
 

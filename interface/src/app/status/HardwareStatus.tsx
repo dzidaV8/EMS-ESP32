@@ -130,7 +130,7 @@ const HardwareStatus = () => {
         />
         <HardwareListItem
           icon={<MemoryIcon />}
-          primary={LL.FREE_MEMORY()}
+          primary={LL.FREE_MEMORY(1)}
           secondary={`${formatNumber(data.free_heap)} KB (${formatNumber(data.max_alloc_heap)} KB max alloc, ${formatNumber(data.free_caps)} KB caps)`}
         />
         {data.psram_size !== undefined && data.free_psram !== undefined && (

@@ -144,7 +144,7 @@ const SystemLog = () => {
   const { LL } = useI18nContext();
   const { me } = useContext(AuthenticatedContext);
 
-  useLayoutTitle(LL.LOG_OF(LL.SYSTEM(0)));
+  useLayoutTitle(LL.LOG_OF(LL.SYSTEM(2)));
 
   const {
     loadData,
@@ -354,7 +354,7 @@ const SystemLog = () => {
               name="level"
               label={LL.LOG_LEVEL()}
               value={data.level}
-              sx={{ width: '14ch' }}
+              sx={{ width: '20ch' }}
               variant="outlined"
               onChange={updateFormValue}
               margin="normal"
@@ -374,7 +374,7 @@ const SystemLog = () => {
                 name="max_messages"
                 label={LL.BUFFER_SIZE()}
                 value={data.max_messages}
-                sx={{ width: '15ch' }}
+                sx={{ width: '20ch' }}
                 variant="outlined"
                 onChange={updateFormValue}
                 margin="normal"

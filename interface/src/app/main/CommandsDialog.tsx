@@ -123,8 +123,8 @@ const CommandsDialog = ({
   return (
     <Dialog sx={dialogStyle} open={open} onClose={handleClose}>
       <DialogTitle>
-        {creating ? `${LL.ADD(1)} ` : LL.UPDATE() + '/' + LL.RUN()}&nbsp;
-        {LL.COMMAND(0)}
+        {creating ? `${LL.ADD(1)} ${LL.NEW(1)}` : LL.EDIT()}&nbsp;
+        {LL.COMMAND(2)}
       </DialogTitle>
       <DialogContent dividers>
         <ValidatedTextField
